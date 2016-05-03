@@ -1,7 +1,7 @@
 import random
 
 class QLearner(object):
-    def __init__(self, q0, actions, learning = 0.5, discount = 0.5):
+    def __init__(self, q0, actions, learning = 0.5, discount = 0.5, default_q = 0.1):
         self.actions = actions
         self.learning = learning
         self.discount = discount
@@ -11,6 +11,7 @@ class QLearner(object):
         self.state0 = None
         self.action0 = None
         self.reward0 = None
+        self.default_q = 0.1    
     
     def reset(self):
         if (self.state0, self.action0, self.reward0) != (None, None, None):
